@@ -1,4 +1,3 @@
-
 import math
 import sys
 
@@ -8,8 +7,7 @@ def get_float(prompt, allow_negative=True):
         try:
             value = float(input(prompt).strip())
             if not allow_negative and value < 0:
-                print("1,2,3,4,5,6,7,8,9,0.")
-            
+                print("Entrada inválida. Digite um número não negativo.")
                 continue
             return value
         except ValueError:
@@ -75,11 +73,11 @@ def raiz_quadrada():
 
 
 def logaritmo():
-    a = get_float("Digite o número (maior que 0): ", allow_negative=False)
-    print("Escolha a base do logaritmo:")
-    print("1) Log natural (ln)")
-    print("2) Logaritmo base 10")
-    print("3) Logaritmo base personalizada")
+    a = get_float("Digite o número para calcular o logaritmo: ", allow_negative=False)
+    print("Escolha o tipo de logaritmo:")
+    print("1) ln")
+    print("2) log10")
+    print("3) log base personalizada")
     opcao = get_int("Opção: ", valid_options={1, 2, 3})
 
     if opcao == 1:
